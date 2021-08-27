@@ -8,7 +8,7 @@ from event_loop_03_yield_from import EventLoopYieldFrom
 loop = EventLoopYieldFrom()
 
 
-def run_sever(host='127.0.0.1', port=55555):
+def run_server(host='127.0.0.1', port=55555):
     sock = socket.socket()
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     sock.bind((host, port))
@@ -31,5 +31,5 @@ def handle_client(sock):
 
 
 if __name__ == '__main__':
-    loop.create_task(run_sever())
+    loop.create_task(run_server())
     loop.run()

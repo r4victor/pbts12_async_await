@@ -8,7 +8,7 @@ from event_loop_04_async_await import EventLoopAsyncAwait
 loop = EventLoopAsyncAwait()
 
 
-async def run_sever(host='127.0.0.1', port=55555):
+async def run_server(host='127.0.0.1', port=55555):
     sock = socket.socket()
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     sock.bind((host, port))
@@ -31,5 +31,5 @@ async def handle_client(sock):
 
 
 if __name__ == '__main__':
-    loop.create_task(run_sever())
+    loop.create_task(run_server())
     loop.run()

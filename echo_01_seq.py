@@ -3,7 +3,7 @@
 import socket
 
 
-def run_sever(host='127.0.0.1', port=55555):
+def run_server(host='127.0.0.1', port=55555):
     sock = socket.socket()
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     sock.bind((host, port))
@@ -26,4 +26,4 @@ def handle_client(sock):
 
 
 if __name__ == '__main__':
-    run_sever()
+    run_server()
