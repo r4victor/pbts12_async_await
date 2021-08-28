@@ -23,11 +23,11 @@ def run_server(host='127.0.0.1', port=55555):
 def handle_client(sock):
     while True:
         yield 'wait_read', sock
-        recieved_data = sock.recv(4096)
-        if not recieved_data:
+        received_data = sock.recv(4096)
+        if not received_data:
             break
         yield 'wait_write', sock
-        sock.sendall(recieved_data)
+        sock.sendall(received_data)
 
     print('Client disconnected:', sock.getpeername())
     sock.close()

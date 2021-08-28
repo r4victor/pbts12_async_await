@@ -22,10 +22,10 @@ def accept(sock):
 
 
 def recv_and_send(sock):
-    recieved_data = sock.recv(4096)
-    if recieved_data:
+    received_data = sock.recv(4096)
+    if received_data:
         # assume sendall won't block
-        sock.sendall(recieved_data)
+        sock.sendall(received_data)
     else:
         print('Client disconnected:', sock.getpeername())
         sel.unregister(sock)
