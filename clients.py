@@ -28,7 +28,7 @@ async def client(name, indent):
         await writer.drain()
         print_indent(indent, f'Client {name} sends "{msg}".')
         resp = (await reader.read(BUFSIZE)).decode()
-        print_indent(indent, f'Client {name} recieves "{resp}".')
+        print_indent(indent, f'Client {name} receives "{resp}".')
     
     writer.close()
     print_indent(indent, f'Client {name} disconnects.')
